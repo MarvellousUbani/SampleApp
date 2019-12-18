@@ -1,3 +1,4 @@
+Rails.application.routes.default_url_options[:host] = "localhost:3000"
 Rails.application.routes.draw do
 
   get 'sessions/new'
@@ -13,5 +14,6 @@ Rails.application.routes.draw do
 	delete '/logout', to: 'sessions#destroy'
 
   resources :users
+  resources :account_activations, only: [:edit]
   
 end
